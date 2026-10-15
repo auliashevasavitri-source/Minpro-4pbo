@@ -84,7 +84,7 @@ com.mycompany.pendataan_umkm berisi class utama Pendataan_UMKM.java untuk menjal
 
 Pemisahan package ini membuat kode lebih terstruktur karena bagian tampilan, pengolahan data, dan akses database memiliki tanggung jawab masing-masing.
   
-<img width="198" height="229" alt="image" src="https://github.com/user-attachments/assets/c6444a2e-7c88-4b2e-878b-fc7282e342a1" />
+<img width="598" height="629" alt="image" src="https://github.com/user-attachments/assets/c6444a2e-7c88-4b2e-878b-fc7282e342a1" />
 
 
 # Penerapan Konsep PBO
