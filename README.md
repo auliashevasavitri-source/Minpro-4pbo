@@ -486,21 +486,21 @@ Hasil tampil data.
 
 <img width="352" height="95" alt="image" src="https://github.com/user-attachments/assets/270e14c0-1c66-4e6c-9ee9-c4a0e83e71a6" />
 
+<img width="296" height="244" alt="image" src="https://github.com/user-attachments/assets/ee0d5033-897a-4b1b-bbb8-ed8e14ca094e" />
 
-Hasil tambah data.
-
-<img width="352" height="95" alt="image" src="https://github.com/user-attachments/assets/398d7292-6eb2-4c10-a5bd-d8dc73703e17" />
+<img width="572" height="500" alt="image" src="https://github.com/user-attachments/assets/682fccc6-5897-4c41-a4c5-7963c2ac8b50" />
 
 
-Hasil ubah data.
+<img width="441" height="499" alt="image" src="https://github.com/user-attachments/assets/c93e69ad-cc74-4d92-bf75-872f9b9ad9a5" />
 
-Hasil hapus data.
 
-Screenshot harus berasal dari hasil pengujian program yang sebenarnya.
+<img width="391" height="323" alt="image" src="https://github.com/user-attachments/assets/40489b3e-dc48-4e4f-b221-1201f1a75c6e" />
 
 
 # Kesimpulan
 
-Pada Mini Project 3 ini, Sistem Pendataan UMKM dikembangkan dari Mini Project 2 dengan mempertahankan konsep access modifier, encapsulation, inheritance, input validation, dummy data, dan MVC. Pada pengembangan kali ini ditambahkan konsep polymorphism, abstraction, dan interface. Polymorphism diterapkan melalui overloading pada method `tampilkanInfo()` dan overriding pada method `getKategori()`. Abstraction diterapkan melalui abstract class `JenisUsaha`, sedangkan interface diterapkan melalui `InfoUMKM` yang digunakan oleh class `UMKM`.
+Pada Mini Project 4, Sistem Pendataan UMKM pada Event dikembangkan dengan mengintegrasikan aplikasi Java dengan database MySQL menggunakan JDBC, PreparedStatement, dan DAO. Konsep PBO dari mini project sebelumnya tetap digunakan, meliputi encapsulation, inheritance, polymorphism, dan abstraction.
 
-Setiap konsep yang diterapkan memiliki fungsi dalam program. Overloading digunakan untuk menampilkan data UMKM secara lengkap atau singkat, overriding digunakan untuk menentukan kategori sesuai jenis usaha, abstraction digunakan sebagai dasar untuk jenis usaha, dan interface digunakan sebagai aturan method untuk menampilkan informasi UMKM. Dengan penerapan konsep tersebut, program tidak hanya dapat melakukan proses CRUD, tetapi juga memiliki struktur kode yang lebih sesuai dengan konsep Pemrograman Berorientasi Objek.
+Penggunaan DAO memisahkan proses akses database dari bagian tampilan dan Controller. Fitur CRUD memungkinkan pengguna menambah, menampilkan, mengubah, dan menghapus data UMKM yang tersimpan di database. Dummy data disediakan melalui file SQL sehingga data awal dapat langsung ditampilkan ketika fitur Read dijalankan.
+
+Dengan pengembangan ini, program tidak hanya menerapkan konsep PBO, tetapi juga dapat menyimpan dan mengelola data secara permanen melalui database MySQL.
