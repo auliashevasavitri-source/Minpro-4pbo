@@ -477,6 +477,7 @@ Data awal di MySQL.
 
 <img width="785" height="670" alt="image" src="https://github.com/user-attachments/assets/1033d92c-0d7a-4576-a77d-437991038b50" />
 
+
 <img width="356" height="258" alt="image" src="https://github.com/user-attachments/assets/3d360874-c2c9-405d-b46d-f6998ce023b4" />
 
 
@@ -484,9 +485,12 @@ Hasil tampil data.
 
 <img width="669" height="513" alt="image" src="https://github.com/user-attachments/assets/f35154e1-1234-463a-9a61-21cd54752e25" />
 
+
 <img width="352" height="95" alt="image" src="https://github.com/user-attachments/assets/270e14c0-1c66-4e6c-9ee9-c4a0e83e71a6" />
 
+
 <img width="296" height="244" alt="image" src="https://github.com/user-attachments/assets/ee0d5033-897a-4b1b-bbb8-ed8e14ca094e" />
+
 
 <img width="572" height="500" alt="image" src="https://github.com/user-attachments/assets/682fccc6-5897-4c41-a4c5-7963c2ac8b50" />
 
