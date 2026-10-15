@@ -443,6 +443,62 @@ Dengan pembagian ini, setiap bagian program memiliki tugas yang jelas dan proses
 <img width="423" height="132" alt="image" src="https://github.com/user-attachments/assets/992e2190-8bc2-4f31-b193-ebbfa89f74e1" />
 
 
+## Pengujian Program
+
+Pengujian dilakukan untuk memastikan aplikasi dapat terhubung dengan database dan menjalankan operasi CRUD.
+
+Pengujian yang dilakukan meliputi:
+
+Menguji koneksi aplikasi Java dengan MySQL.
+
+Menampilkan data awal yang telah dimasukkan melalui file SQL.
+
+Menambahkan data UMKM baru dan memeriksa apakah data tersimpan di database.
+
+Mengubah data UMKM dan memeriksa hasil perubahan.
+
+Menghapus data UMKM dan memastikan data tersebut tidak lagi muncul.
+
+Menjalankan kembali aplikasi untuk memastikan data yang tersimpan tetap tersedia.
+
+Dokumentasi Pengujian
+
+Tambahkan screenshot hasil pengujian berikut:
+
+Koneksi database.
+
+<img width="323" height="184" alt="image" src="https://github.com/user-attachments/assets/bd3833d0-18d2-4666-bd3b-77f96dbe3bf0" />
+
+
+<img width="427" height="212" alt="image" src="https://github.com/user-attachments/assets/a93a175d-4d89-42c1-99bd-63d946523829" />
+
+
+Data awal di MySQL.
+
+<img width="785" height="670" alt="image" src="https://github.com/user-attachments/assets/1033d92c-0d7a-4576-a77d-437991038b50" />
+
+<img width="356" height="258" alt="image" src="https://github.com/user-attachments/assets/3d360874-c2c9-405d-b46d-f6998ce023b4" />
+
+
+Hasil tampil data.
+
+<img width="669" height="513" alt="image" src="https://github.com/user-attachments/assets/f35154e1-1234-463a-9a61-21cd54752e25" />
+
+<img width="352" height="95" alt="image" src="https://github.com/user-attachments/assets/270e14c0-1c66-4e6c-9ee9-c4a0e83e71a6" />
+
+
+Hasil tambah data.
+
+<img width="352" height="95" alt="image" src="https://github.com/user-attachments/assets/398d7292-6eb2-4c10-a5bd-d8dc73703e17" />
+
+
+Hasil ubah data.
+
+Hasil hapus data.
+
+Screenshot harus berasal dari hasil pengujian program yang sebenarnya.
+
+
 # Kesimpulan
 
 Pada Mini Project 3 ini, Sistem Pendataan UMKM dikembangkan dari Mini Project 2 dengan mempertahankan konsep access modifier, encapsulation, inheritance, input validation, dummy data, dan MVC. Pada pengembangan kali ini ditambahkan konsep polymorphism, abstraction, dan interface. Polymorphism diterapkan melalui overloading pada method `tampilkanInfo()` dan overriding pada method `getKategori()`. Abstraction diterapkan melalui abstract class `JenisUsaha`, sedangkan interface diterapkan melalui `InfoUMKM` yang digunakan oleh class `UMKM`.
