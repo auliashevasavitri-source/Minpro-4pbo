@@ -316,25 +316,20 @@ Oleh karena itu, validasi digunakan agar program dapat menangani input yang tida
 
 ## 7. Dummy Data
 
-Program memiliki satu dummy data yang dimasukkan ketika program pertama kali dijalankan.
+Pada Mini Project 4, dummy data disediakan melalui file SQL dan dimasukkan langsung ke database MySQL sebelum program dijalankan. Data awal tidak dibuat melalui kode Java.
 
-Data yang digunakan:
+Database yang digunakan bernama pendataan_umkm dan memiliki dua tabel utama, yaitu event dan umkm.
 
-<img width="669" height="367" alt="image" src="https://github.com/user-attachments/assets/b98a1a97-9c3d-44dd-9698-f366cafface6" />
+Tabel event menyimpan informasi event, sedangkan tabel umkm menyimpan data usaha, nama pemilik, jenis usaha, dan ID event yang diikuti.
 
-### Alasan Menggunakan Dummy Data
+Data awal yang digunakan dalam program meliputi event Bazar UMKM Samarinda 2026, UMKM Dapur Aulia, dan UMKM Samarinda Fashion.
 
-Dummy data digunakan agar program tidak dimulai dalam keadaan kosong.
+File SQL berisi perintah untuk membuat database, membuat tabel beserta relasinya, dan memasukkan data awal. Ketika aplikasi dijalankan, fitur tampil data mengambil informasi dari database melalui DAO.
 
-Dengan adanya dummy data, ketika pengguna memilih menu **Tampilkan Data UMKM**, sudah terdapat data yang dapat ditampilkan.
+Dengan cara ini, data awal sudah tersedia saat fitur Read digunakan. Data juga tetap tersimpan ketika aplikasi ditutup karena MySQL digunakan sebagai penyimpanan permanen.
 
-Dummy data juga memudahkan proses pengujian karena fitur tampil, ubah, dan hapus dapat langsung dicoba tanpa harus memasukkan data terlebih dahulu.
+<img width="640" height="323" alt="image" src="https://github.com/user-attachments/assets/bdef287e-413c-492d-be26-38a9cf3ef610" />
 
-Penggunaan dummy data juga memenuhi ketentuan Mini Project 2 yang meminta minimal satu data awal dalam `ArrayList`.
-
-### Screenshot Dummy Data
-
-<img width="678" height="501" alt="image" src="https://github.com/user-attachments/assets/5526bf08-5b5c-495a-9adc-441329cbaf2c" />
 
 ## MVC (Model View Controller)
 
@@ -515,6 +510,68 @@ Contohnya pada proses tambah data:
 5. Data dapat ditampilkan kembali melalui `UMKMView`.
 
 MVC digunakan agar kode program lebih terstruktur, lebih mudah dibaca, dan lebih mudah dikembangkan jika nantinya ingin menambahkan fitur baru.
+
+
+## Penerapan JDBC dan DAO
+
+1. JDBC (Java Database Connectivity)
+
+JDBC digunakan untuk menghubungkan aplikasi Java dengan database MySQL. Pada program ini, koneksi diatur melalui class DatabaseConnection.java yang berada dalam package database.
+
+Class tersebut menggunakan DriverManager.getConnection() dengan URL database, username, dan password sesuai konfigurasi MySQL.
+
+Dengan JDBC, aplikasi dapat menjalankan perintah SQL untuk mengambil, menambahkan, mengubah, dan menghapus data UMKM.
+
+<img width="604" height="349" alt="image" src="https://github.com/user-attachments/assets/96a5ea0d-07aa-4d26-a854-fd80efd7e117" />
+
+
+2. PreparedStatement
+
+PreparedStatement digunakan untuk menjalankan perintah SQL dengan parameter yang diisi melalui program Java.
+
+Pada program ini, PreparedStatement digunakan dalam operasi CRUD. Parameter seperti ID UMKM dan nama usaha dimasukkan menggunakan method seperti setInt() dan setString().
+
+Penggunaan PreparedStatement membuat query lebih terstruktur dan membantu mengurangi risiko SQL injection dibandingkan menggabungkan input pengguna langsung ke dalam teks SQL.
+
+
+<img width="649" height="527" alt="image" src="https://github.com/user-attachments/assets/44d27c20-04fd-41a3-ad9a-cbccffb7f213" />
+
+
+3. Data Access Object (DAO)
+
+DAO merupakan bagian program yang bertanggung jawab menangani akses ke database. Pada proyek ini, DAO diterapkan melalui class UMKMDAO.java di package dao.
+
+Method yang digunakan meliputi:
+
+tampilkanSemua() untuk mengambil seluruh data UMKM.
+
+tambah() untuk menyimpan data UMKM baru.
+
+ubah() untuk memperbarui data UMKM.
+
+hapus() untuk menghapus data berdasarkan ID.
+
+DAO memisahkan perintah SQL dari bagian tampilan dan Controller sehingga kode lebih mudah dikelola.
+
+
+<img width="578" height="323" alt="image" src="https://github.com/user-attachments/assets/7e73c5d1-aa9c-4b2e-8ad5-0206c9a42203" />
+
+
+4. Hubungan MVC, DAO, dan Database
+
+Pada Mini Project 4, MVC tetap digunakan dan dilengkapi dengan DAO serta database MySQL.
+
+Model merepresentasikan data UMKM dan event.
+
+View menampilkan menu dan menerima input pengguna.
+
+Controller menerima permintaan dari View dan memanggil DAO.
+
+DAO menjalankan perintah SQL menggunakan JDBC dan PreparedStatement.
+
+Database MySQL menyimpan data secara permanen.
+
+Dengan pembagian ini, setiap bagian program memiliki tugas yang jelas dan proses CRUD dapat dilakukan melalui aplikasi yang terhubung dengan database.
 
 # Tampilan Program
 
