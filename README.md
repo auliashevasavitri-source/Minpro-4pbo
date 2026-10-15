@@ -459,8 +459,6 @@ Mengubah data UMKM dan memeriksa hasil perubahan.
 
 Menghapus data UMKM dan memastikan data tersebut tidak lagi muncul.
 
-Menjalankan kembali aplikasi untuk memastikan data yang tersimpan tetap tersedia.
-
 Dokumentasi Pengujian
 
 Tambahkan screenshot hasil pengujian berikut:
@@ -499,6 +497,20 @@ Hasil tampil data.
 
 
 <img width="391" height="323" alt="image" src="https://github.com/user-attachments/assets/40489b3e-dc48-4e4f-b221-1201f1a75c6e" />
+
+ubah
+
+<img width="208" height="256" alt="image" src="https://github.com/user-attachments/assets/d575ba01-725b-4a11-86f5-ce5f9fd79445" />
+
+<img width="214" height="253" alt="image" src="https://github.com/user-attachments/assets/dfdf8207-3ff1-4ffe-8558-6bfa560857b0" />
+
+<img width="383" height="224" alt="image" src="https://github.com/user-attachments/assets/fd06ddfa-dca0-4f38-9b5d-f5d9a3169f47" />
+
+hapus
+
+<img width="487" height="251" alt="image" src="https://github.com/user-attachments/assets/be20be13-2d67-4780-a2d2-3a157c9aea9b" />
+
+<img width="259" height="250" alt="image" src="https://github.com/user-attachments/assets/8304577f-144c-42ff-995b-f9f2c19ceebb" />
 
 
 # Kesimpulan
