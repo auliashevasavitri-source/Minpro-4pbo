@@ -67,15 +67,24 @@ ArrayList tetap digunakan sebagai wadah sementara untuk menampung hasil query, s
 
 
 # Struktur Project
-Program dibagi menjadi beberapa package agar setiap bagian memiliki tugas yang berbeda.
-Package yang digunakan terdiri dari:
 
-- `model` digunakan untuk class yang berhubungan dengan data. `InfoUMKM.java` digunakan sebagai interface yang menentukan method `tampilkanInfo()` untuk class yang menerapkannya.
-- `controller` digunakan untuk mengelola data UMKM.
-- `view` digunakan untuk tampilan dan input pengguna.
-- `com.mycompany.pendataan_umkm` berisi class utama untuk menjalankan program.
+Program dibagi menjadi beberapa package agar setiap bagian memiliki tugas yang berbeda.
+
+model berisi class yang berhubungan dengan data dan konsep PBO, seperti UMKM, Event, JenisUsaha, JenisKuliner, JenisFashion, dan InfoUMKM.
+
+controller berisi class UMKMController yang mengatur alur pengolahan data dan meneruskan permintaan ke DAO.
+
+view berisi class UMKMView yang menangani menu, input pengguna, dan tampilan hasil.
+
+dao berisi class UMKMDAO yang menjalankan operasi CRUD ke database.
+
+database berisi class DatabaseConnection yang mengatur koneksi aplikasi Java dengan MySQL.
+
+com.mycompany.pendataan_umkm berisi class utama Pendataan_UMKM.java untuk menjalankan program.
+
+Pemisahan package ini membuat kode lebih terstruktur karena bagian tampilan, pengolahan data, dan akses database memiliki tanggung jawab masing-masing.
   
-<img width="647" height="348" alt="image" src="https://github.com/user-attachments/assets/c95206a5-0fe9-4f16-bd5b-806ad7797d2c" />
+<img width="198" height="229" alt="image" src="https://github.com/user-attachments/assets/c6444a2e-7c88-4b2e-878b-fc7282e342a1" />
 
 
 # Penerapan Konsep PBO
