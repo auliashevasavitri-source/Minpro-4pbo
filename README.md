@@ -331,186 +331,23 @@ Dengan cara ini, data awal sudah tersedia saat fitur Read digunakan. Data juga t
 <img width="640" height="323" alt="image" src="https://github.com/user-attachments/assets/bdef287e-413c-492d-be26-38a9cf3ef610" />
 
 
-## MVC (Model View Controller)
+## Model, View, dan Controller (MVC)
 
-MVC digunakan untuk memisahkan bagian program berdasarkan tugasnya. Dalam program ini, bagian data, tampilan, dan proses pengolahan data ditempatkan pada package yang berbeda.
+Program Sistem Pendataan UMKM menggunakan pola arsitektur Model-View-Controller (MVC) untuk memisahkan bagian data, tampilan, dan pengolahan program agar lebih terstruktur.
 
-Struktur MVC pada program:
+Model: Berisi class yang merepresentasikan data program, seperti UMKM, Event, JenisKuliner, dan JenisFashion.
 
-<img width="573" height="457" alt="image" src="https://github.com/user-attachments/assets/a5573c36-ae8e-4e6a-9d09-c99422555637" />
+View: Berada pada class UMKMView dan bertugas menampilkan menu, menerima input pengguna, serta menampilkan hasil pengolahan data.
 
-## 8. Interface
+Controller: Berada pada class UMKMController dan bertugas menghubungkan View dengan DAO untuk menjalankan operasi pengolahan data UMKM.
 
-Interface diterapkan dengan membuat `InfoUMKM.java`.
+DAO (Data Access Object): Berada pada class UMKMDAO dan bertugas menjalankan operasi CRUD ke database MySQL menggunakan JDBC dan PreparedStatement.
 
-Interface `InfoUMKM` memiliki method `tampilkanInfo()` yang menjadi aturan bagi class yang menerapkannya.
+Alur MVC pada Mini Project 4
 
-Contohnya:
+Ketika pengguna memilih menu pada View, permintaan diteruskan ke Controller. Controller kemudian memanggil DAO untuk menjalankan operasi yang diperlukan pada database MySQL. Hasil operasi dikembalikan ke Controller dan ditampilkan melalui View.
 
-```java
-public interface InfoUMKM {
-
-    void tampilkanInfo();
-}
-```
-
-Class `UMKM` kemudian menerapkan interface tersebut menggunakan:
-
-```java
-public class UMKM implements InfoUMKM
-```
-
-Method `tampilkanInfo()` pada class `UMKM` menggunakan `@Override` karena method tersebut berasal dari interface `InfoUMKM`.
-
-Contohnya:
-
-```java
-@Override
-public void tampilkanInfo() {
-
-    System.out.println("ID UMKM      : " + idUMKM);
-    System.out.println("Nama Usaha   : " + namaUsaha);
-    System.out.println("Nama Pemilik : " + namaPemilik);
-    System.out.println("Jenis Usaha  : " + jenisUsaha.getNamaJenis());
-    System.out.println("Kategori     : " + jenisUsaha.getKategori());
-    System.out.println("Event        : " + event.getNamaEvent());
-    System.out.println("Lokasi       : " + event.getLokasi());
-}
-```
-
-Interface tersebut juga benar-benar digunakan pada saat program menampilkan data. Pada `UMKMView`, object `UMKM` digunakan melalui referensi bertipe `InfoUMKM`.
-
-Contohnya:
-
-```java
-InfoUMKM info = umkm;
-info.tampilkanInfo();
-```
-
-### Alasan Menggunakan Interface
-
-Interface digunakan untuk menentukan method yang harus dimiliki oleh class yang menerapkannya. Pada program ini, `InfoUMKM` digunakan agar class `UMKM` memiliki method `tampilkanInfo()` yang dapat digunakan untuk menampilkan informasi UMKM.
-
-Penerapan interface juga membuat penggunaan method lebih terstruktur karena `UMKMView` dapat memanggil method melalui tipe `InfoUMKM`.
-
-### Screenshot Interface
-
-**Interface `InfoUMKM.java`:**
-
-<img width="533" height="349" alt="image" src="https://github.com/user-attachments/assets/0623e53c-976d-405b-ae40-a88cb6ba836c" />
-
-
-
-**Class `UMKM.java` menggunakan interface:**
-
-<img width="517" height="322" alt="image" src="https://github.com/user-attachments/assets/537db5ea-25da-45d5-ba16-3501b5de6298" />
-
-
-**Method `tampilkanInfo()` menggunakan `@Override`:**
-
-<img width="537" height="298" alt="image" src="https://github.com/user-attachments/assets/ef16269b-b169-4beb-801e-e1703300c32a" />
-
-
-**Penggunaan interface pada `UMKMView.java`:**
-
-<img width="420" height="297" alt="image" src="https://github.com/user-attachments/assets/9f4f5abc-5a0e-45f7-9277-31ec90cbb0b4" />
-
-
-
-## 1. Model
-
-Package `model` berisi class yang berhubungan dengan data dan konsep utama dalam program.
-
-Class yang terdapat dalam package `model` yaitu:
-
-<img width="517" height="443" alt="image" src="https://github.com/user-attachments/assets/ef44305d-ee73-49e0-a34f-7d19d0a454fc" />
-
-
-Class yang terdapat dalam package `model` yaitu:
-
-- `UMKM.java` digunakan untuk menyimpan data UMKM seperti ID UMKM, nama usaha, nama pemilik, jenis usaha, dan event.
-- `Event.java` digunakan untuk menyimpan data event seperti ID event, nama event, dan lokasi.
-- `JenisUsaha.java` digunakan sebagai abstract class untuk jenis usaha.
-- `JenisKuliner.java` merupakan subclass dari `JenisUsaha` untuk jenis usaha kuliner.
-- `JenisFashion.java` merupakan subclass dari `JenisUsaha` untuk jenis usaha fashion.
-- `InfoUMKM.java` merupakan interface yang menentukan method `tampilkanInfo()` yang digunakan untuk menampilkan informasi UMKM.
-
-### Alasan Menggunakan Model
-
-Model digunakan agar bagian yang menyimpan data dan konsep utama program dipisahkan dari tampilan dan proses program.
-
-Dengan pemisahan ini, class seperti `UMKM` dapat fokus pada data yang dimiliki oleh object UMKM tanpa harus mengatur menu atau input pengguna.
-
-Pada Mini Project 3, package `model` juga digunakan untuk menerapkan konsep **inheritance, abstraction, polymorphism, dan interface**.
-
-Hal ini membuat kode lebih terstruktur dan memudahkan jika data atau jenis usaha UMKM nantinya ingin dikembangkan.
-
-## 2. View
-
-Package `view` berisi class `UMKMView.java`.
-
-View digunakan untuk menampilkan menu dan menerima input dari pengguna.
-
-Contohnya:
-
-<img width="451" height="212" alt="image" src="https://github.com/user-attachments/assets/67f2a070-c2f3-4984-a3d5-5c7c02a9fd18" />
-
-### Alasan Menggunakan View
-
-View digunakan agar bagian tampilan dan input pengguna tidak bercampur dengan bagian pengolahan data.
-
-Dengan pemisahan ini, jika tampilan menu ingin diubah, bagian yang mengatur data UMKM tidak perlu ikut diubah.
-
-Hal ini membuat kode program lebih teratur karena bagian View hanya berfokus pada interaksi dengan pengguna.
-
-### Screenshot View
-
-<img width="834" height="526" alt="image" src="https://github.com/user-attachments/assets/01d75b80-cf74-4fea-aca9-f52b3914dff3" />
-
-<img width="707" height="532" alt="image" src="https://github.com/user-attachments/assets/f76142a7-48fa-4c99-b0c9-e0b49fb31a66" />
-
-## 3. Controller
-
-Package `controller` berisi class `UMKMController.java`.
-
-Controller digunakan untuk mengatur proses pengelolaan data UMKM, seperti:
-
-- Menambahkan data.
-- Mencari data berdasarkan ID.
-- Menghapus data.
-- Mengakses daftar UMKM.
-
-Contohnya:
-
-<img width="663" height="523" alt="image" src="https://github.com/user-attachments/assets/8c49609f-ec57-4389-a263-7ecc3919756e" />
-
-### Alasan Menggunakan Controller
-
-Controller digunakan agar proses pengelolaan data tidak dilakukan langsung oleh bagian tampilan.
-
-Contohnya ketika pengguna memilih menu tambah data, `UMKMView` menerima input dari pengguna. Setelah data dibuat menjadi object `UMKM`, data tersebut diberikan kepada `UMKMController` untuk dimasukkan ke dalam `ArrayList`.
-
-Dengan begitu, View hanya berfokus pada tampilan dan input, sedangkan Controller menangani proses pengelolaan data.
-
-
-## Alasan Menggunakan MVC
-
-MVC dipilih sebagai nilai tambah karena program memiliki beberapa class dan fitur CRUD sehingga kode program mulai memiliki beberapa bagian yang berbeda.
-
-Jika semua kode diletakkan dalam satu class, kode akan menjadi panjang dan lebih sulit untuk dibaca.
-
-Dengan menggunakan MVC, setiap bagian program memiliki tugas yang lebih jelas. `Model` menangani data, `View` menangani tampilan dan input pengguna, sedangkan `Controller` menangani proses pengelolaan data.
-
-Contohnya pada proses tambah data:
-
-1. Pengguna memasukkan data melalui `UMKMView`.
-2. `UMKMView` membuat object `UMKM`.
-3. Data diberikan kepada `UMKMController`.
-4. `UMKMController` menyimpan data ke dalam `ArrayList`.
-5. Data dapat ditampilkan kembali melalui `UMKMView`.
-
-MVC digunakan agar kode program lebih terstruktur, lebih mudah dibaca, dan lebih mudah dikembangkan jika nantinya ingin menambahkan fitur baru.
-
+Dengan penerapan MVC, kode program menjadi lebih terorganisir karena tampilan, logika pengolahan data, representasi objek, dan akses database memiliki tugas masing-masing.
 
 ## Penerapan JDBC dan DAO
 
